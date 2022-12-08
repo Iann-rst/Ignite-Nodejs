@@ -21,3 +21,81 @@
 - docker exec -it "container_id" / "container_name" /bin/bash: Acessar a maquina do container;
 
 - docker logs "container_name" -f: Mostrar os logs do container;
+
+
+## Requisitos da Aplicação
+
+**RF** => Requisitos funcionais;
+
+**RNF** => Requisitos não funcionais; 
+
+**RN**=> Regra de Negócio;
+
+
+### Cadastro de carro
+
+  **RF**
+  - Deve ser possível cadastrar um novo carro;
+  - Deve ser possível listar todas as categorias do carro;
+
+  **RN**
+  - Não deve ser possível cadastrar um carro com uma placa já existente;
+  - Não deve ser possível alterar a placa de um carro ja cadastrado;
+  - O carro deve ser cadastrado com disponibilidade para alugar;
+  - O carro só pode ser cadastrado por um usuário admin;
+
+
+### Listagem de carros
+
+  **RF**
+  - Deve ser possível listar todos os carros disponíveis;
+  - Deve ser possível listar todos os carros disponíveis pelo nome da categoria;
+  - Deve ser possível listar todos os carros disponíveis pelo nome da marca;
+  - Deve ser possível listar todos os carros disponíveis pelo nome do carro;
+
+
+
+  **RN**
+  - O usuário não precisa estar logado no sistema;
+
+
+### Cadastro de Especificação do carro
+
+  **RF**
+  - Deve ser possível cadastrar uma especificação para um carro;
+  - Deve ser possível listar todas as especificações;
+  - Deve ser possível listar todos os carros;
+
+  **RN**
+  - Não deve ser possível cadastrar uma especificação para um carro não cadastrado;
+  - Não deve ser possível cadastrar a mesma especificação para um carro que ja tem essa especificação existente;
+  - A especificação do carro só pode ser cadastrado por um usuário admin;
+
+
+### Cadastro de imagens do carro
+  **RF**
+  - Deve ser possível cadastrar a imagem do carro;
+
+  **RNF**
+  - Utilizar o multer para upload dos arquivos;
+
+  **RN**
+  - O usuário deve poder cadastrar mais de uma imagem para o mesmo carro;
+  - O carro só pode ser cadastrado por um usuário admin;
+  - As imagens do carro só pode ser cadastrado por um usuário admin;
+
+
+### Aluguel de carro
+
+**RF**
+- Deve ser possível cadastrar um aluguel;
+
+**RNF**
+
+**RN**
+- O aluguel deve ter duração minima de 24 horas;
+- Não deve ser possível cadastrar um novo aluguel caso ja exista um aberto para o mesmo usuário;
+- Não deve ser possível cadastrar um novo aluguel caso ja exista um aberto para o mesmo carro;
+
+
+
