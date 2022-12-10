@@ -5,7 +5,7 @@ import { UsersRepository } from "@modules/accounts/infra/typeorm/repositories/Us
 import { AppError } from "@shared/errors/AppError";
 
 interface IPayload {
-  user_id: string;
+  sub: string;
 }
 
 export async function ensureAuthenticated(
@@ -26,7 +26,7 @@ export async function ensureAuthenticated(
   const [, token] = authHeader.split(" ");
 
   try {
-    const { user_id } = verify(
+    const { sub: user_id } = verify(
       token,
       "b59785b7da2085fdc46442df3728f5ad"
     ) as IPayload; // pega o id do usuário
@@ -41,7 +41,7 @@ export async function ensureAuthenticated(
     request.user = {
       id: user.id,
     };
-    next();
+    return next();
   } catch {
     throw new AppError("Invalid token!", 401);
   }
