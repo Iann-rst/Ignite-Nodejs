@@ -12,6 +12,11 @@ class CarRepository implements ICarsRepository {
     this.repository = getRepository(Car);
   }
 
+  async findById(id: string): Promise<Car> {
+    const car = await this.repository.findOne(id);
+    return car;
+  }
+
   async create({
     brand,
     category_id,
