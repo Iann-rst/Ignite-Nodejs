@@ -18,7 +18,11 @@ class ListCarsUseCase {
     // constructor
   }
   async execute({ category_id, brand, name }: IRequest): Promise<Car[]> {
-    const listCars = await this.carsRepository.findAvailable();
+    const listCars = await this.carsRepository.findAvailable(
+      category_id,
+      brand,
+      name
+    );
     return listCars;
   }
 }
