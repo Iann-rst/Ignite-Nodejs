@@ -1,3 +1,4 @@
+// DTO - Função de Criação de um aluguel
 interface ICreateRentalDTO {
   user_id: string;
   car_id: string;
