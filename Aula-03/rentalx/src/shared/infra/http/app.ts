@@ -2,6 +2,7 @@ import express, { Request, Response, NextFunction } from "express";
 import swaggerUi from "swagger-ui-express";
 
 import "reflect-metadata";
+import "dotenv/config";
 import "express-async-errors";
 import { AppError } from "@shared/errors/AppError";
 import createConnection from "@shared/infra/typeorm";
