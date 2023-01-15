@@ -17,7 +17,7 @@ const uploadCarImageController = new UploadCarImageController();
 
 const carsRoutes = Router();
 
-const uploadCarImage = multer(uploadConfig.upload("./tmp/cars"));
+const uploadCarImage = multer(uploadConfig);
 
 carsRoutes.post(
   "/",
