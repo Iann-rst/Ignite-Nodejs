@@ -1,8 +1,8 @@
 Arguments: 
-  /opt/node-v18.12.1-linux-x64/bin/node /usr/share/yarn/bin/yarn.js add clas-transformer
+  /opt/node-v18.12.1-linux-x64/bin/node /usr/share/yarn/bin/yarn.js add @babel/cli @babel/core @babel/node @babel/plugin-proposal-class-properties @babel/plugin-proposal-decorators @babel/present-env babel-plugin-module-resolver babel-plugin-transform-typescript-metadata -D
 
 PATH: 
-  /opt/node-v18.12.1-linux-x64/bin:/home/iann/.npm-global/bin:/opt/node-v18.12.1-linux-x64/bin:/home/iann/.npm-global/bin:/opt/node-v18.12.1-linux-x64/bin:/home/iann/.npm-global/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/iann/Android/Sdk/emulator:/home/iann/Android/Sdk/tools:/home/iann/Android/Sdk/tools/bin:/home/iann/Android/Sdk/platform-tools:/home/iann/android-studio/bin:/home/iann/Android/Sdk/emulator:/home/iann/Android/Sdk/tools:/home/iann/Android/Sdk/tools/bin:/home/iann/Android/Sdk/platform-tools:/home/iann/android-studio/bin
+  /opt/node-v18.12.1-linux-x64/bin:/home/iann/.npm-global/bin:/opt/node-v18.12.1-linux-x64/bin:/opt/node-v18.12.1-linux-x64/bin:/home/iann/.npm-global/bin:/home/iann/.npm-global/bin:/opt/node-v18.12.1-linux-x64/bin:/home/iann/.npm-global/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/iann/Android/Sdk/emulator:/home/iann/Android/Sdk/tools:/home/iann/Android/Sdk/tools/bin:/home/iann/Android/Sdk/platform-tools:/home/iann/android-studio/bin:/home/iann/Android/Sdk/emulator:/home/iann/Android/Sdk/tools:/home/iann/Android/Sdk/tools/bin:/home/iann/Android/Sdk/platform-tools:/home/iann/android-studio/bin
 
 Yarn version: 
   1.22.19
@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/clas-transformer: Not found
+  Error: https://registry.yarnpkg.com/@babel%2fpresent-env: Not found
       at params.callback [as _callback] (/usr/share/yarn/lib/cli.js:66145:18)
       at self.callback (/usr/share/yarn/lib/cli.js:140890:22)
       at Request.emit (node:events:513:28)
@@ -33,6 +33,7 @@ npm manifest:
     "main": "index.js",
     "license": "MIT",
     "scripts": {
+      "build": "tsc",
       "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules --respawn src/shared/infra/http/server.ts",
       "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli",
       "test": "NODE_ENV=test jest --runInBand --detectOpenHandles",
@@ -41,6 +42,7 @@ npm manifest:
     "dependencies": {
       "aws-sdk": "^2.1295.0",
       "bcryptjs": "^2.4.3",
+      "class-transformer": "^0.5.1",
       "csv-parse": "^5.3.3",
       "dayjs": "^1.11.7",
       "dotenv": "^16.0.3",
@@ -1536,6 +1538,11 @@ Lockfile:
     version "1.2.2"
     resolved "https://registry.yarnpkg.com/cjs-module-lexer/-/cjs-module-lexer-1.2.2.tgz#9f84ba3244a512f3a54e5277e8eef4c489864e40"
     integrity sha512-cOU9usZw8/dXIXKtwa8pM0OTJQuJkxMN6w30csNRUerHfeQ5R6U3kkU/FtJeIf3M202OHfY2U8ccInBG7/xogA==
+  
+  class-transformer@^0.5.1:
+    version "0.5.1"
+    resolved "https://registry.yarnpkg.com/class-transformer/-/class-transformer-0.5.1.tgz#24147d5dffd2a6cea930a3250a677addf96ab336"
+    integrity sha512-SQa1Ws6hUbfC98vKGxZH3KFY0Y1lm5Zm0SY8XX9zbK7FJCyVEac3ATW0RIpwzW+oOfmHE5PMPufDG9hCfoEOMw==
   
   cli-highlight@^2.1.11:
     version "2.1.11"
